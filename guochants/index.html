@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国产ts在线-精品亚洲变装秀与娱乐内容精选</title>
+    <meta name="description" content="国产ts在线平台，专注提供高清国产TS、亚洲变装模特的在线视频与图文内容。涵盖最新热门国产TS视频、高清写真、分类导航及观看指南，满足用户对国产TS内容的多元化需求。">
+    <meta name="keywords" content="国产ts在线,国产TS,亚洲变装,TS视频,国产TS写真,TS分类导航">
+    <style>
+        :root {
+            --primary-color: #ff4081;
+            --primary-dark: #c51162;
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-radius: 12px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f2f2f2;
+            border-radius: 20px;
+            padding: 4px 16px;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            flex: 1;
+            padding: 4px 0;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffebee 0%, #fff0f6 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 64, 129, 0.1);
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 32px var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+
+        .card-cover {
+            position: relative;
+            aspect-ratio: 2/3;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 12px solid #fff;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            margin-left: 4px;
+        }
+
+        .card:hover .play-icon {
+            opacity: 1;
+        }
+
+        .card-info {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .card-tags {
+            margin-top: 8px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .mini-tag {
+            font-size: 10px;
+            background: #f0f0f0;
+            color: #666;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Category Sidebar & Layout */
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar-menu li {
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sidebar-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 12px 0;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .sidebar-menu a:hover {
+            color: var(--primary-color);
+            padding-left: 4px;
+        }
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(90deg, #1a1a1a 0%, #2c2c2c 100%);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .banner-content h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .banner-content p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            border-top: 1px solid #eee;
+            padding: 48px 0 24px;
+            margin-top: 60px;
+        }
+
+        .footer-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .header-inner {
+                padding: 0 12px;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">TS<span>精选</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">最新视频</a></li>
+                <li><a href="#">高清写真</a></li>
+                <li><a href="#">分类导航</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索国产TS视频...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>探索国产TS魅力世界</h1>
+        <p>汇集全网最新、最热国产TS模特视频与高清图集，为您提供沉浸式的在线观看体验。</p>
+        <div class="tags">
+            <span class="tag">国产TS热榜</span>
+            <span class="tag">亚洲变装秀</span>
+            <span class="tag">高清在线</span>
+            <span class="tag">分类导航</span>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    <div class="layout-grid">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li><a href="#">🔥 热门推荐</a></li>
+                <li><a href="#">🎬 最新更新</a></li>
+                <li><a href="#">👗 甜美风格</a></li>
+                <li><a href="#">💃 时尚模特</a></li>
+                <li><a href="#">🎭 性感写真</a></li>
+                <li><a href="#">🎥 实况直播</a></li>
+                <li><a href="#">📸 高清图集</a></li>
+                <li><a href="#">🆕 新人专区</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Hero Banner -->
+            <div class="banner">
+                <div class="banner-content">
+                    <h2>每日精选：顶级国产TS模特</h2>
+                    <p>严选高清资源，带来极致视觉享受</p>
+                </div>
+                <a href="#" class="btn-primary">立即观看</a>
+            </div>
+
+            <!-- Section: Latest Videos -->
+            <section class="section-block">
+                <div class="section-header">
+                    <h2 class="section-title">最新国产TS视频</h2>
+                    <a href="#" class="view-all">查看全部 ></a>
+                </div>
+                <div class="grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/ts1/400/600" alt="国产TS视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">甜美邂逅：国产TS林林高清写真</h3>
+                            <div class="card-meta">
+                                <span>12.5万次播放</span>
+                                <span>2天前</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="mini-tag">写真</span>
+                                <span class="mini-tag">高清</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/ts2/400/600" alt="国产TS视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">夜幕下的诱惑：国产TS模特秀</h3>
+                            <div class="card-meta">
+                                <span>8.2万次播放</span>
+                                <span>5小时前</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="mini-tag">模特</span>
+                                <span class="mini-tag">走秀</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/ts3/400/600" alt="国产TS视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">清纯变装挑战：国产TS小雅</h3>
+                            <div class="card-meta">
+                                <span>25.1万次播放</span>
+                                <span>1周前</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="mini-tag">变装</span>
+                                <span class="mini-tag">挑战</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/ts4/400/600" alt="国产TS视频封面">
+                            <div class="play-icon"></div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">高清摄影：国产TS时尚大片</h3>
+                            <div class="card-meta">
+                                <span>6.9万次播放</span>
+                                <span>3天前</span>
+                            </div>
+                            <div class="card-tags">
+                                <span class="mini-tag">大片</span>
+                                <span class="mini-tag">时尚</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section: Hot Categories -->
+            <section class="section-block" style="margin-top: 40px;">
+                <div class="section-header">
+                    <h2 class="section-title">热门分类导航</h2>
+                </div>
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));">
+                    <a href="#" class="card" style="text-align: center; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">💄</div>
+                        <div style="font-weight: 600;">精致妆容</div>
+                    </a>
+                    <a href="#" class="card" style="text-align: center; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">👗</div>
+                        <div style="font-weight: 600;">时尚穿搭</div>
+                    </a>
+                    <a href="#" class="card" style="text-align: center; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">📸</div>
+                        <div style="font-weight: 600;">自拍专区</div>
+                    </a>
+                    <a href="#" class="card" style="text-align: center; padding: 20px;">
+                        <div style="font-size: 24px; margin-bottom: 8px;">🎥</div>
+                        <div style="font-weight: 600;">实况直播</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Section: FAQ -->
+            <section class="section-block" style="margin-top: 40px;">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                </div>
+                <div style="background: #fff; padding: 24px; border-radius: var(--border-radius);">
+                    <details style="margin-bottom: 16px; border-bottom: 1px solid #f0f0f0; padding-bottom: 16px;">
+                        <summary style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between;">
+                            如何观看国产TS在线视频？
+                            <span>▼</span>
+                        </summary>
+                        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">
+                            用户可以直接点击首页的视频卡片或分类导航中的相关链接，即可进入播放页面。本站支持高清流畅播放，无需下载客户端。
+                        </p>
+                    </details>
+                    <details style="margin-bottom: 16px; border-bottom: 1px solid #f0f0f0; padding-bottom: 16px;">
+                        <summary style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between;">
+                            国产TS视频是否免费？
+                            <span>▼</span>
+                        </summary>
+                        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">
+                            部分精选内容提供免费观看，更多高清独家视频和完整图集需要会员权限。我们提供多种会员套餐供用户选择。
+                        </p>
+                    </details>
+                    <details style="margin-bottom: 16px; border-bottom: 1px solid #f0f0f0; padding-bottom: 16px;">
+                        <summary style="font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between;">
+                            如何更新最新的国产TS内容？
+                            <span>▼</span>
+                        </summary>
+                        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">
+                            您可以关注网站的“最新更新”栏目，或者订阅我们的推送通知，第一时间获取最新的国产TS模特视频和写真动态。
+                        </p>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">隐私政策</a>
+            <a href="#">联系客服</a>
+            <a href="#">广告合作</a>
+        </div>
+        <p class="copyright">Copyright © 2023 TS精选在线平台. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                  </html>
