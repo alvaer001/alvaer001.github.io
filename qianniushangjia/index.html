@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千牛商家工作台 - 统一店铺管理平台与电商运营中心</title>
+    <meta name="description" content="千牛商家工作台是淘宝天猫商家的一站式服务平台，集商品管理、订单处理、客户服务、数据统计于一体。本文详细介绍千牛工作台的功能模块、使用指南及运营技巧。">
+    <meta name="keywords" content="千牛商家工作台, 淘宝千牛, 天猫商家后台, 电商运营工具, 订单管理系统, 客服中心">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff5000;
+            --primary-hover: #ff6a00;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --bg-body: #f4f4f4;
+            --bg-card: #ffffff;
+            --border-color: #e5e5e5;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(255, 80, 0, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 540px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 80, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Module Section */
+        .module-section {
+            background-color: var(--bg-card);
+        }
+
+        .module-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .module-item {
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .module-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fafafa;
+        }
+
+        .module-header h3 {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-body {
+            padding: 20px;
+        }
+
+        .module-list-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .module-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .module-list-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .module-list-text {
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .module-list-hint {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-left: auto;
+        }
+
+        /* Guide & Tips */
+        .tips-section {
+            background-color: #fff8e1;
+        }
+
+        .tips-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tip-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .tip-list li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .check-icon {
+            color: #52c41a;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .module-list {
+                grid-template-columns: 1fr;
+            }
+
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-wrapper {
+                padding: 0 10px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#FF5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#FF5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#FF5000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                千牛<span>商家工作台</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页概览</a></li>
+                    <li><a href="#functions">核心功能</a></li>
+                    <li><a href="#guide">使用指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费开店</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-tag">一站式电商管理解决方案</span>
+                    <h1>千牛商家工作台：您的店铺运营中枢</h1>
+                    <p>无论是淘宝还是天猫商家，千牛都是您必备的统一管理平台。集商品上下架、订单处理、客户服务、营销活动及数据分析于一体，让店铺运营更高效、更智能。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start;">
+                        <a href="#functions" class="btn btn-primary">探索功能</a>
+                        <a href="#guide" class="btn btn-outline">阅读指南</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for Dashboard UI -->
+                    <img src="https://picsum.photos/seed/taobaoui/600/400" alt="千牛工作台界面示意">
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features -->
+        <section class="section" id="functions">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">全能核心模块</h2>
+                    <p class="section-desc">千牛工作台深度整合了电商运营的各个环节，无需切换多个后台即可完成所有操作。</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="icon-box">📦</div>
+                        <h3>商品管理</h3>
+                        <p>支持批量上下架、属性编辑、库存同步及多端预览，轻松管理海量商品信息。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">💳</div>
+                        <h3>订单处理</h3>
+                        <p>集中查看待发货、待付款订单，支持批量发货、打印面单及物流跟踪管理。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">💬</div>
+                        <h3>千牛客服</h3>
+                        <p>千牛卖家版客户端，支持快捷短语、自动回复及聊天记录检索，提升服务效率。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">📊</div>
+                        <h3>数据看板</h3>
+                        <p>实时查看店铺流量、转化率及交易数据，通过数据诊断优化运营策略。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Modules -->
+        <section class="section module-section" id="guide">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">功能深度解析</h2>
+                    <p class="section-desc">深入了解千牛的各项专业工具，助您精准掌握店铺命脉。</p>
+                </div>
+                <div class="module-list">
+                    <!-- Module 1 -->
+                    <div class="module-item">
+                        <div class="module-header">
+                            <h3>🛒 交易与订单中心</h3>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">待发货订单管理</div>
+                                <span class="module-list-hint">批量操作</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">一键打印快递单</div>
+                                <span class="module-list-hint">支持热敏打印机</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">订单状态流转</div>
+                                <span class="module-list-hint">发货/签收/退款</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">退款纠纷处理</div>
+                                <span class="module-list-hint">智能判责</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="module-item">
+                        <div class="module-header">
+                            <h3>🤝 客户服务生态</h3>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">千牛卖家版客户端</div>
+                                <span class="module-list-hint">PC端必备</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">旺旺消息聚合</div>
+                                <span class="module-list-hint">多店铺客服</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">千牛小蜜智能客服</div>
+                                <span class="module-list-hint">7x24小时</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">评价管理</div>
+                                <span class="module-list-hint">回复与处理</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="module-item">
+                        <div class="module-header">
+                            <h3>📈 营销与运营工具</h3>
+                        </div>
+                        <div class="module-body">
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">千牛市场</div>
+                                <span class="module-list-hint">插件下载</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">手机千牛</div>
+                                <span class="module-list-hint">移动办公</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">千牛直播中控台</div>
+                                <span class="module-list-hint">直播管理</span>
+                            </div>
+                            <div class="module-list-item">
+                                <div class="module-list-icon"></div>
+                                <div class="module-list-text">店铺诊断工具</div>
+                                <span class="module-list-hint">流量分析</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Tips -->
+        <section class="section tips-section">
+            <div class="container tips-container">
+                <div class="tip-content">
+                    <h2>高效运营必备技巧</h2>
+                    <ul class="tip-list">
+                        <li>
+                            <span class="check-icon">✔</span>
+                            <span><strong>善用快捷短语：</strong>在客服设置中配置常用回复，可节省大量打字时间，提升响应速度。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✔</span>
+                            <span><strong>设置自动回复：</strong>针对非工作时间设置自动回复，确保客户随时能获得反馈，避免流失。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✔</span>
+                            <span><strong>定期备份数据：</strong>利用千牛的数据导出功能，定期备份店铺订单和客户信息，防止数据丢失。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✔</span>
+                            <span><strong>关注千牛小蜜：</strong>遇到账号问题或操作疑惑时，直接咨询千牛小蜜，获取官方即时帮助。</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tip-image">
+                    <img src="https://picsum.photos/seed/working/500/350" alt="千牛工作操作示意图" style="border-radius: var(--radius); box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题解答</h2>
+                    <p class="section-desc">关于千牛商家工作台的使用疑问与解答。</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">千牛工作台支持哪些设备？</div>
+                        <div class="faq-answer">千牛工作台支持PC端、平板电脑以及智能手机。您可以根据需要选择电脑版进行复杂操作，或使用手机千牛随时查看订单和回复消息。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何切换不同的淘宝/天猫店铺？</div>
+                        <div class="faq-answer">在千牛工作台顶部导航栏中，点击店铺名称即可快速切换到您需要管理的不同店铺。支持同时登录多个店铺账号。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">千牛客服和手机淘宝客服有什么区别？</div>
+                        <div class="faq-answer">千牛客服是商家端的管理工具，用于接待买家咨询、处理订单；手机淘宝客服是买家端的沟通界面。两者通过旺旺账号互通。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">忘记千牛登录密码怎么办？</div>
+                        <div class="faq-answer">您可以通过绑定的手机号或邮箱进行密码找回。如果绑定的联系方式也已变更，请联系淘宝官方客服进行账号申诉。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>千牛商家工作台</h4>
+                    <p>致力于为电商卖家提供高效、便捷的一站式运营服务，让电商生意更简单。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>产品服务</h5>
+                    <ul>
+                        <li><a href="#">千牛卖家版</a></li>
+                        <li><a href="#">手机千牛</a></li>
+                        <li><a href="#">千牛直播</a></li>
+                        <li><a href="#">千牛市场</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>运营中心</h5>
+                    <ul>
+                        <li><a href="#">商家学院</a></li>
+                        <li><a href="#">数据看板</a></li>
+                        <li><a href="#">营销中心</a></li>
+                        <li><a href="#">服务市场</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>帮助支持</h5>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 千牛商家工作台指南. All rights reserved. 本页面为功能介绍与使用指南，非官方网站。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
